@@ -28,9 +28,10 @@ static LOGGER: AdvancedLogger<serial_writer::Uart16550> = AdvancedLogger::new(
     uefi_logger::Format::Standard,
     &[
         ("goblin", log::LevelFilter::Off),
-        ("uefi_depex_lib", log::LevelFilter::Off),
+        ("uefi_depex", log::LevelFilter::Off),
         ("gcd_measure", log::LevelFilter::Off),
         ("allocations", log::LevelFilter::Off),
+        ("efi_memory_map", log::LevelFilter::Off),
     ],
     log::LevelFilter::Trace,
     serial_writer::Uart16550::new(serial_writer::Interface::Io(0x402)),
