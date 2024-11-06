@@ -7,6 +7,14 @@ DXE Core binary that will be used in QEMU firmware.
 
 Currently, two QEMU platforms are supported. The build commands for each are given below.
 
+Set the `RUSTC_BOOTSTRAP` environment variable to `1` in the terminal used for the build.
+
+- Linux: `export RUSTC_BOOTSTRAP=1`
+- Windows (cmd): `set RUSTC_BOOTSTRAP=1`
+- Windows (powershell): `$env:RUSTC_BOOTSTRAP=1`
+
+---
+
 - **QEMU Q35**: `cargo build_q35`
   - Release build: `cargo build_q35 --profile=release`
 - **QEMU SBSA**: `cargo build_sbsa`
