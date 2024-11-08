@@ -1,6 +1,6 @@
 [package]
 name = "qemu_dxe_core"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 
 [[bin]]
@@ -14,15 +14,15 @@ path = "bin/sbsa_dxe_core.rs"
 required-features = ["aarch64"]
 
 [dependencies]
-section_extractor = {git = "https://github.com/pop-project/uefi-core.git", rev = "6caab58b605aedb252f21ffe52c8e8524e89a58e"}
-serial_writer = {git = "https://github.com/pop-project/uefi-core.git", rev = "6caab58b605aedb252f21ffe52c8e8524e89a58e"}
-uefi_cpu_init = {git = "https://github.com/pop-project/uefi-core.git", rev = "6caab58b605aedb252f21ffe52c8e8524e89a58e"}
-uefi_interrupt = {git = "https://github.com/pop-project/uefi-core.git", rev = "6caab58b605aedb252f21ffe52c8e8524e89a58e"}
-uefi_logger = {git = "https://github.com/pop-project/uefi-core.git", rev = "6caab58b605aedb252f21ffe52c8e8524e89a58e"}
+section_extractor = {git = "https://github.com/pop-project/uefi-core.git", rev = "v1.0.0"}
+serial_writer = {git = "https://github.com/pop-project/uefi-core.git", rev = "v1.0.0"}
+uefi_cpu_init = {git = "https://github.com/pop-project/uefi-core.git", rev = "v1.0.0"}
+uefi_interrupt = {git = "https://github.com/pop-project/uefi-core.git", rev = "v1.0.0"}
+uefi_logger = {git = "https://github.com/pop-project/uefi-core.git", rev = "v1.0.0"}
 
-adv_logger = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "2853304e90c816a0404e680a687ccabfbb6ef6aa"}
-dxe_core = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "2853304e90c816a0404e680a687ccabfbb6ef6aa"}
-sample_components = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "2853304e90c816a0404e680a687ccabfbb6ef6aa"}
+adv_logger = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v2.0.0"}
+dxe_core = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v2.0.0"}
+sample_components = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v2.0.0"}
 
 log = { version = "^0.4", default-features = false, features = ["release_max_level_warn"]}
 
