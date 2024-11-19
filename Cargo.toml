@@ -16,6 +16,7 @@ required-features = ["aarch64"]
 [dependencies]
 section_extractor = { git = "https://github.com/pop-project/uefi-core.git", rev = "v4.1.0" }
 uefi_cpu_init = { git = "https://github.com/pop-project/uefi-core.git", rev = "v4.1.0" }
+uefi_debugger = { git = "https://github.com/pop-project/uefi-core.git", rev = "v4.1.0" }
 uefi_interrupt = { git = "https://github.com/pop-project/uefi-core.git", rev = "v4.1.0" }
 
 adv_logger = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v3.0.0" }

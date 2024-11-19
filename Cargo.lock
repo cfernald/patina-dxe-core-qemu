@@ -410,6 +410,7 @@ dependencies = [
  "sample_components",
  "section_extractor",
  "uefi_cpu_init",
+ "uefi_debugger",
  "uefi_interrupt",
  "uefi_sdk",
 ]

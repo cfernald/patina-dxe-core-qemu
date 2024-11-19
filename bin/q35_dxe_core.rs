@@ -22,6 +22,11 @@ use uefi_sdk::{log::Format, serial::Uart16550};
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     log::error!("{}", info);
+
+    if uefi_debugger::enabled() {
+        uefi_debugger::breakpoint();
+    }
+
     loop {}
 }
 
@@ -38,11 +43,18 @@ static LOGGER: AdvancedLogger<Uart16550> = AdvancedLogger::new(
     Uart16550::new(uefi_sdk::serial::Interface::Io(0x402)),
 );
 
+static DEBUGGER: uefi_debugger::UefiDebugger<uefi_sdk::serial::Uart16550> =
+    uefi_debugger::UefiDebugger::new(uefi_sdk::serial::Uart16550::new(uefi_sdk::serial::Interface::Io(0x3F8)))
+        .with_default_config(false, true, 0)
+        .with_debugger_logging();
+
 #[cfg_attr(target_os = "uefi", export_name = "efi_main")]
 pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
     log::set_logger(&LOGGER).map(|()| log::set_max_level(log::LevelFilter::Trace)).unwrap();
     let adv_logger_component = AdvancedLoggerComponent::<Uart16550>::new(&LOGGER);
     adv_logger_component.init_advanced_logger(physical_hob_list).unwrap();
+
+    uefi_debugger::set_debugger(&DEBUGGER);
 
     Core::default()
         .with_cpu_init(uefi_cpu_init::X64EfiCpuInit::default())
