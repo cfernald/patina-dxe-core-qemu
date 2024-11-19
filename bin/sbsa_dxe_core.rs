@@ -17,6 +17,7 @@ use alloc::boxed::Box;
 use core::{ffi::c_void, panic::PanicInfo};
 use dxe_core::Core;
 use sample_components::HelloComponent;
+use uefi_sdk::{log::Format, serial::UartPl011};
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
@@ -24,8 +25,8 @@ fn panic(info: &PanicInfo) -> ! {
     loop {}
 }
 
-static LOGGER: AdvancedLogger<serial_writer::UartPl011> = AdvancedLogger::new(
-    uefi_logger::Format::Standard,
+static LOGGER: AdvancedLogger<UartPl011> = AdvancedLogger::new(
+    Format::Standard,
     &[
         ("goblin", log::LevelFilter::Off),
         ("uefi_depex", log::LevelFilter::Off),
@@ -34,17 +35,17 @@ static LOGGER: AdvancedLogger<serial_writer::UartPl011> = AdvancedLogger::new(
         ("efi_memory_map", log::LevelFilter::Off),
     ],
     log::LevelFilter::Trace,
-    serial_writer::UartPl011::new(0x6000_0000),
+    UartPl011::new(0x6000_0000),
 );
 
 #[cfg_attr(target_os = "uefi", export_name = "efi_main")]
 pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
     log::set_logger(&LOGGER).map(|()| log::set_max_level(log::LevelFilter::Trace)).unwrap();
-    let adv_logger_component = AdvancedLoggerComponent::<serial_writer::UartPl011>::new(&LOGGER);
+    let adv_logger_component = AdvancedLoggerComponent::<UartPl011>::new(&LOGGER);
     adv_logger_component.init_advanced_logger(physical_hob_list).unwrap();
 
     Core::default()
-        .with_cpu_initializer(uefi_cpu_init::NullCpuInitializer::default())
+        .with_cpu_init(uefi_cpu_init::NullEfiCpuInit::default())
         .with_interrupt_manager(uefi_interrupt::InterruptManagerAarch64::default())
         .with_section_extractor(section_extractor::CompositeSectionExtractor::default())
         // Add any config knob functions for pre-gcd-init Core
