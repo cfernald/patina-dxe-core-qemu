@@ -14,7 +14,7 @@ dependencies = [
 [[package]]
 name = "adv_logger"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
  "log",
  "mu_pi",
@@ -173,29 +173,28 @@ checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
 [[package]]
 name = "dxe_core"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
+ "ahash",
  "corosensei",
  "crc32fast",
+ "goblin",
  "lazy_static",
+ "linked_list_allocator",
  "log",
  "mu_pi",
  "mu_rust_helpers 1.2.0 (git+https://github.com/microsoft/mu_rust_helpers.git?tag=v1.2.0)",
  "r-efi",
+ "scroll",
  "spin 0.5.2",
- "uefi_allocator",
+ "uefi_collections",
  "uefi_component_interface",
  "uefi_cpu_init",
  "uefi_debugger",
  "uefi_depex",
  "uefi_device_path",
- "uefi_event",
- "uefi_gcd",
  "uefi_interrupt",
- "uefi_pecoff",
- "uefi_protocol_db",
  "uefi_sdk",
- "uefi_tpl_lock",
  "uuid",
 ]
 
@@ -273,9 +272,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.162"
+version = "0.2.164"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18d287de67fe55fd7e1581fe933d965a5a9477b38e949cfa9f8574ef01506398"
+checksum = "433bfe06b8c75da9b2e3fbea6e5329ff87748f0b144ef75306e674c3f6f7c13f"
 
 [[package]]
 name = "linked_list_allocator"
@@ -393,9 +392,9 @@ checksum = "b4596b6d070b27117e987119b4dac604f3c58cfb0b191112e24771b2faeac1a6"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.89"
+version = "1.0.92"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f139b0662de085916d1fb67d2b4169d1addddda1919e696f3252b740b629986e"
+checksum = "37d3544b3f2748c54e147655edb5025752e2303145b5aefb3c3ea2c78b973bb0"
 dependencies = [
  "unicode-ident",
 ]
@@ -463,7 +462,7 @@ checksum = "0e819f2bc632f285be6d7cd36e25940d45b2391dd6d9b939e79de557f7014248"
 [[package]]
 name = "sample_components"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
  "log",
  "uefi_component_interface",
@@ -499,7 +498,7 @@ dependencies = [
 [[package]]
 name = "section_extractor"
 version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.0#75d9b3eedd33702e8e6587bc3b25423c0ebcf668"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
 dependencies = [
  "alloc-no-stdlib",
  "brotli-decompressor",
@@ -537,9 +536,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.87"
+version = "2.0.89"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d"
+checksum = "44d46482f1c1c87acd84dea20c1bf5ebff4c757009ed6bf19cfd36fb10e92c4e"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -588,21 +587,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "uefi_allocator"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
-dependencies = [
- "linked_list_allocator",
- "mu_pi",
- "r-efi",
- "uefi_gcd",
- "uefi_tpl_lock",
-]
-
-[[package]]
 name = "uefi_collections"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
  "log",
 ]
@@ -610,7 +597,7 @@ dependencies = [
 [[package]]
 name = "uefi_component_interface"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
  "r-efi",
  "uefi_sdk",
@@ -619,7 +606,7 @@ dependencies = [
 [[package]]
 name = "uefi_cpu_init"
 version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.0#75d9b3eedd33702e8e6587bc3b25423c0ebcf668"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
 dependencies = [
  "lazy_static",
  "log",
@@ -635,7 +622,7 @@ dependencies = [
 [[package]]
 name = "uefi_debugger"
 version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.0#75d9b3eedd33702e8e6587bc3b25423c0ebcf668"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
 dependencies = [
  "gdbstub",
  "log",
@@ -666,50 +653,25 @@ dependencies = [
 [[package]]
 name = "uefi_depex"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
  "log",
  "r-efi",
- "uefi_protocol_db",
  "uuid",
 ]
 
 [[package]]
 name = "uefi_device_path"
 version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
 dependencies = [
  "r-efi",
-]
-
-[[package]]
-name = "uefi_event"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
-dependencies = [
- "log",
- "r-efi",
- "uefi_tpl_lock",
- "uuid",
-]
-
-[[package]]
-name = "uefi_gcd"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
-dependencies = [
- "log",
- "mu_pi",
- "mu_rust_helpers 1.2.0 (git+https://github.com/microsoft/mu_rust_helpers.git?tag=v1.2.0)",
- "r-efi",
- "uefi_collections",
- "uefi_tpl_lock",
 ]
 
 [[package]]
 name = "uefi_interrupt"
 version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.0#75d9b3eedd33702e8e6587bc3b25423c0ebcf668"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
 dependencies = [
  "lazy_static",
  "log",
@@ -719,30 +681,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "uefi_pecoff"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
-dependencies = [
- "goblin",
- "scroll",
-]
-
-[[package]]
-name = "uefi_protocol_db"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
-dependencies = [
- "ahash",
- "r-efi",
- "spin 0.5.2",
- "uefi_tpl_lock",
- "uuid",
-]
-
-[[package]]
 name = "uefi_sdk"
 version = "0.1.0"
-source = "git+https://github.com/pop-project/uefi-sdk.git?rev=ee76ceb89f003b1c5d62573d8fe862ce31baf503#ee76ceb89f003b1c5d62573d8fe862ce31baf503"
+source = "git+https://github.com/pop-project/uefi-sdk.git?rev=v0.1.0#1bf4dd0d0044ebe10bef122e9e5f78fcc27a294d"
 dependencies = [
  "log",
  "r-efi",
@@ -751,19 +692,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "uefi_tpl_lock"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v3.0.0#6cf51c4bc83f2b21e65a9f9212acdf95172f68a5"
-dependencies = [
- "log",
- "r-efi",
-]
-
-[[package]]
 name = "unicode-ident"
-version = "1.0.13"
+version = "1.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe"
+checksum = "adb9e6ca4f869e1180728b7950e35922a7fc6397f7b641499e8f3ef06e50dc83"
 
 [[package]]
 name = "uuid"
