@@ -13,8 +13,8 @@ dependencies = [
 
 [[package]]
 name = "adv_logger"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "log",
  "mu_pi",
@@ -172,8 +172,8 @@ checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
 
 [[package]]
 name = "dxe_core"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "ahash",
  "corosensei",
@@ -189,11 +189,10 @@ dependencies = [
  "spin 0.5.2",
  "uefi_collections",
  "uefi_component_interface",
- "uefi_cpu_init",
+ "uefi_cpu",
  "uefi_debugger",
  "uefi_depex",
  "uefi_device_path",
- "uefi_interrupt",
  "uefi_sdk",
  "uuid",
 ]
@@ -364,10 +363,11 @@ checksum = "1261fe7e33c73b354eab43b1273a57c8f967d0391e80353e51f764ac02cf6775"
 
 [[package]]
 name = "paging"
-version = "0.1.0"
-source = "git+https://github.com/pop-project/paging.git?rev=feef56f0123f9464d971a509d7935add0f043cdc#feef56f0123f9464d971a509d7935add0f043cdc"
+version = "1.0.0"
+source = "git+https://github.com/pop-project/paging.git?rev=4ca4452d6fdd2216abf8b0ba509b6ebe433e3646#4ca4452d6fdd2216abf8b0ba509b6ebe433e3646"
 dependencies = [
  "bitfield-struct 0.9.2",
+ "bitflags 2.6.0",
 ]
 
 [[package]]
@@ -408,9 +408,8 @@ dependencies = [
  "log",
  "sample_components",
  "section_extractor",
- "uefi_cpu_init",
+ "uefi_cpu",
  "uefi_debugger",
- "uefi_interrupt",
  "uefi_sdk",
 ]
 
@@ -461,8 +460,8 @@ checksum = "0e819f2bc632f285be6d7cd36e25940d45b2391dd6d9b939e79de557f7014248"
 
 [[package]]
 name = "sample_components"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "log",
  "uefi_component_interface",
@@ -497,8 +496,8 @@ dependencies = [
 
 [[package]]
 name = "section_extractor"
-version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
+version = "6.0.0"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.0#04bb79b82cc78a5805e10e50002bc06bf428a5f7"
 dependencies = [
  "alloc-no-stdlib",
  "brotli-decompressor",
@@ -588,26 +587,27 @@ dependencies = [
 
 [[package]]
 name = "uefi_collections"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "log",
 ]
 
 [[package]]
 name = "uefi_component_interface"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "r-efi",
  "uefi_sdk",
 ]
 
 [[package]]
-name = "uefi_cpu_init"
-version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
+name = "uefi_cpu"
+version = "6.0.0"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.0#04bb79b82cc78a5805e10e50002bc06bf428a5f7"
 dependencies = [
+ "cfg-if",
  "lazy_static",
  "log",
  "mtrr",
@@ -621,14 +621,14 @@ dependencies = [
 
 [[package]]
 name = "uefi_debugger"
-version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
+version = "6.0.0"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.0#04bb79b82cc78a5805e10e50002bc06bf428a5f7"
 dependencies = [
  "gdbstub",
  "log",
  "paging",
  "spin 0.9.8",
- "uefi_interrupt",
+ "uefi_cpu",
  "uefi_sdk",
 ]
 
@@ -652,8 +652,8 @@ dependencies = [
 
 [[package]]
 name = "uefi_depex"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "log",
  "r-efi",
@@ -662,28 +662,16 @@ dependencies = [
 
 [[package]]
 name = "uefi_device_path"
-version = "2.0.2"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v4.0.0#9a4b0698e2ec2d43ba2129b0921b274395ab3096"
+version = "5.0.0"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
 dependencies = [
  "r-efi",
 ]
 
 [[package]]
-name = "uefi_interrupt"
-version = "3.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v4.1.1#cb22eac52a3a8ab977fc038d224b5bebfbde5bc2"
-dependencies = [
- "lazy_static",
- "log",
- "spin 0.9.8",
- "uefi_sdk",
- "x86_64",
-]
-
-[[package]]
 name = "uefi_sdk"
 version = "0.1.0"
-source = "git+https://github.com/pop-project/uefi-sdk.git?rev=v0.1.0#1bf4dd0d0044ebe10bef122e9e5f78fcc27a294d"
+source = "git+https://github.com/pop-project/uefi-sdk.git?rev=v0.1.1#1e8d48829598592c3a0642853eedaf96825d3358"
 dependencies = [
  "log",
  "r-efi",
