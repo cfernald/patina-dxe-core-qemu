@@ -14,7 +14,7 @@ dependencies = [
 [[package]]
 name = "adv_logger"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "log",
  "mu_pi",
@@ -173,7 +173,7 @@ checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
 [[package]]
 name = "dxe_core"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "ahash",
  "corosensei",
@@ -271,9 +271,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.164"
+version = "0.2.167"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "433bfe06b8c75da9b2e3fbea6e5329ff87748f0b144ef75306e674c3f6f7c13f"
+checksum = "09d6582e104315a817dff97f75133544b2e094ee22447d2acf4a74e189ba06fc"
 
 [[package]]
 name = "linked_list_allocator"
@@ -461,7 +461,7 @@ checksum = "0e819f2bc632f285be6d7cd36e25940d45b2391dd6d9b939e79de557f7014248"
 [[package]]
 name = "sample_components"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "log",
  "uefi_component_interface",
@@ -497,7 +497,7 @@ dependencies = [
 [[package]]
 name = "section_extractor"
 version = "6.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.0#04bb79b82cc78a5805e10e50002bc06bf428a5f7"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.1#a513b4004d2fdcc4ed7de2c8b426f034aede84f6"
 dependencies = [
  "alloc-no-stdlib",
  "brotli-decompressor",
@@ -535,9 +535,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.89"
+version = "2.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "44d46482f1c1c87acd84dea20c1bf5ebff4c757009ed6bf19cfd36fb10e92c4e"
+checksum = "919d3b74a5dd0ccd15aeb8f93e7006bd9e14c295087c9896a110f490752bcf31"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -588,7 +588,7 @@ dependencies = [
 [[package]]
 name = "uefi_collections"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "log",
 ]
@@ -596,7 +596,7 @@ dependencies = [
 [[package]]
 name = "uefi_component_interface"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "r-efi",
  "uefi_sdk",
@@ -605,7 +605,7 @@ dependencies = [
 [[package]]
 name = "uefi_cpu"
 version = "6.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.0#04bb79b82cc78a5805e10e50002bc06bf428a5f7"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.1#a513b4004d2fdcc4ed7de2c8b426f034aede84f6"
 dependencies = [
  "cfg-if",
  "lazy_static",
@@ -622,7 +622,7 @@ dependencies = [
 [[package]]
 name = "uefi_debugger"
 version = "6.0.0"
-source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.0#04bb79b82cc78a5805e10e50002bc06bf428a5f7"
+source = "git+https://github.com/pop-project/uefi-core.git?rev=v6.0.1#a513b4004d2fdcc4ed7de2c8b426f034aede84f6"
 dependencies = [
  "gdbstub",
  "log",
@@ -653,7 +653,7 @@ dependencies = [
 [[package]]
 name = "uefi_depex"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "log",
  "r-efi",
@@ -663,7 +663,7 @@ dependencies = [
 [[package]]
 name = "uefi_device_path"
 version = "5.0.0"
-source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v5.0.0#23426b8f25e8bead03a0f4cbc4c9df249f52cca4"
+source = "git+https://github.com/pop-project/uefi-dxe-core.git?rev=v6.0.0#4c69a19598b3c3e3dad33a2d158c092b876af279"
 dependencies = [
  "r-efi",
 ]
@@ -671,7 +671,7 @@ dependencies = [
 [[package]]
 name = "uefi_sdk"
 version = "0.1.0"
-source = "git+https://github.com/pop-project/uefi-sdk.git?rev=v0.1.1#1e8d48829598592c3a0642853eedaf96825d3358"
+source = "git+https://github.com/pop-project/uefi-sdk.git?rev=v0.1.2#128e0e2464750d527d3615153fc0b173390e568f"
 dependencies = [
  "log",
  "r-efi",
@@ -731,9 +731,9 @@ dependencies = [
 
 [[package]]
 name = "x86_64"
-version = "0.14.12"
+version = "0.14.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96cb6fd45bfeab6a5055c5bffdb08768bd0c069f1d946debe585bbb380a7c062"
+checksum = "c101112411baafbb4bf8d33e4c4a80ab5b02d74d2612331c61e8192fc9710491"
 dependencies = [
  "bit_field",
  "bitflags 2.6.0",

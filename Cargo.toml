@@ -14,15 +14,15 @@ path = "bin/sbsa_dxe_core.rs"
 required-features = ["aarch64"]
 
 [dependencies]
-section_extractor = { git = "https://github.com/pop-project/uefi-core.git", rev = "v6.0.0" }
-uefi_cpu = { git = "https://github.com/pop-project/uefi-core.git", rev = "v6.0.0" }
-uefi_debugger = { git = "https://github.com/pop-project/uefi-core.git", rev = "v6.0.0" }
+section_extractor = { git = "https://github.com/pop-project/uefi-core.git", rev = "v6.0.1" }
+uefi_cpu = { git = "https://github.com/pop-project/uefi-core.git", rev = "v6.0.1" }
+uefi_debugger = { git = "https://github.com/pop-project/uefi-core.git", rev = "v6.0.1" }
 
-adv_logger = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v5.0.0" }
-dxe_core = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v5.0.0" }
-sample_components = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v5.0.0" }
+adv_logger = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v6.0.0" }
+dxe_core = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v6.0.0" }
+sample_components = { git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "v6.0.0" }
 
-uefi_sdk = { git = "https://github.com/pop-project/uefi-sdk.git", rev = "v0.1.1" }
+uefi_sdk = { git = "https://github.com/pop-project/uefi-sdk.git", rev = "v0.1.2" }
 
 
 log = { version = "^0.4", default-features = false, features = [
