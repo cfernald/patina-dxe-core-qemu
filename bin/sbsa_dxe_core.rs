@@ -45,9 +45,10 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
     adv_logger_component.init_advanced_logger(physical_hob_list).unwrap();
 
     Core::default()
-        .with_cpu_init(uefi_cpu::cpu::EfiCpuInitNull::default())
-        .with_interrupt_manager(uefi_cpu::interrupts::InterruptManagerAArch64::default())
+        .with_cpu_init(uefi_cpu::cpu::aarch64::EfiCpuInitAArch64::default())
+        .with_interrupt_manager(uefi_cpu::interrupts::InterruptManagerAArch64::new())
         .with_section_extractor(section_extractor::CompositeSectionExtractor::default())
+        .with_interrupt_bases(uefi_cpu::interrupts::InterruptBasesAArch64::new(0x40060000 as _, 0x40080000 as _))
         // Add any config knob functions for pre-gcd-init Core
         // .with_some_config(true)
         .initialize(physical_hob_list) // We can make allocations now!
