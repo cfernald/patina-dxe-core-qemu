@@ -59,6 +59,7 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
     Core::default()
         .with_cpu_init(uefi_cpu::cpu::EfiCpuInitX64::default())
         .with_interrupt_manager(uefi_cpu::interrupts::InterruptManagerX64::default())
+        .with_interrupt_bases(uefi_cpu::interrupts::InterruptBasesNull::default())
         .with_section_extractor(section_extractor::CompositeSectionExtractor::default())
         // Add any config knob functions for pre-gcd-init Core
         // .with_some_config(true)
