@@ -22,3 +22,9 @@ rustflags = [
     "-C", "link-arg=/base:0x0",
     "-C", "link-arg=/subsystem:efi_boot_service_driver",
 ]
+
+[registries]
+UefiRust = { index = "sparse+https://pkgs.dev.azure.com/microsoft/MsUEFI/_packaging/UefiRust/Cargo/index/" }
+
+[source.crates-io]
+replace-with = "UefiRust"
