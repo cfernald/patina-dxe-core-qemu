@@ -30,36 +30,37 @@ The binaries are produced in the `target` directory.
 In your development workflow, you should test your firmware changes on QEMU. You can replace the dependencies in this
 repo with your local repo for each dependency to build and test that code.
 
-To do that, replace each dependency that you need to substitute with the path to the directory in the local
-repository that contains the package manifest for the dependency. For example, in the `Cargo.toml` file contents shown
-below, to test a new DXE core, you would replace
-\"`git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"`\" with
-\"`path = "C:/src/uefi-dxe-core/<dependency_path>"`\" for code in the local directory `C:/src/uefi-dxe-core`:
+To do that, follow the [Overriding Dependencies](https://doc.rust-lang.org/cargo/reference/overriding-dependencies.html)
+section in the Cargo Book. Notice that although the `crates-io` registry is replaced with the `UefiRust` in our repo
+in `.cargo/config.toml`, the `crates-io` registry is still patched here similar to the examples in the Cargo Book.
 
 ```toml
-section_extractor = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-serial_writer = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-uefi_cpu_init = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-uefi_logger = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-
-adv_logger = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "dee38a69a6be52a45b3c970c8b83b1af095b610b"}
-dxe_core = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "dee38a69a6be52a45b3c970c8b83b1af095b610b"}
-sample_components = {git = "https://github.com/pop-project/uefi-dxe-core.git", rev = "dee38a69a6be52a45b3c970c8b83b1af095b610b"}
-
-log = { version = "^0.4", default-features = false, features = ["release_max_level_warn"]}
+adv_logger = { version = "7" }
+dxe_core = { version = "7" }
+log = { version = "^0.4", default-features = false, features = [
+    "release_max_level_warn",
+] }
+sample_components = { version = "7" }
+section_extractor = { version = "9" }
+uefi_cpu = { version = "9" }
+uefi_debugger = { version = "9" }
+uefi_sdk = { version = "1" }
 ```
 
 To produce the following temporary contents in the `Cargo.toml` file:
 
 ```toml
-section_extractor = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-serial_writer = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-uefi_cpu_init = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
-uefi_logger = {git = "https://github.com/pop-project/uefi-core.git", rev = "891819afcd4bceac694cae1f7339fa09334d9324"}
+adv_logger = { version = "7" }
+dxe_core = { version = "7" }
+log = { version = "^0.4", default-features = false, features = [
+    "release_max_level_warn",
+] }
+sample_components = { version = "7" }
+section_extractor = { version = "9" }
+uefi_cpu = { version = "9" }
+uefi_debugger = { version = "9" }
+uefi_sdk = { version = "1" }
 
-adv_logger = {path = "C:/src/uefi-dxe-core/adv_logger"}
-dxe_core = {path = "C:/src/uefi-dxe-core/dxe_core"}
-sample_components = {path = "C:/src/uefi-dxe-core/sample_components"}
-
-log = { version = "^0.4", default-features = false, features = ["release_max_level_warn"]}
+[patch.crates-io]
+dxe_core = { path = "../uefi-dxe-core/dxe_core" }
 ```
