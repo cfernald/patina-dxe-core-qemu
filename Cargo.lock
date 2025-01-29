@@ -79,9 +79,9 @@ dependencies = [
 
 [[package]]
 name = "bitfield-struct"
-version = "0.9.3"
+version = "0.9.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d7a33e7b9505a52e33ed0ad66db6434f18cda0b1c72665fabf14e85cdd39e43"
+checksum = "b2869c63ccf4f8bf0d485070b880e60e097fb7aeea80ee82a0a94a957e372a0b"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -114,9 +114,9 @@ dependencies = [
 
 [[package]]
 name = "boot_services"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "274d27b7c543f41c405fd8e6f31709256d59ad9e0993ab59c4cdeb52ca63f83f"
+checksum = "053fc67f707bc5bf56467dfc9096455af1b389a6e6a013fb34e87c53f97170bf"
 dependencies = [
  "r-efi",
  "uefi_protocol",
@@ -423,7 +423,7 @@ version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94fb716b433ab81c4745cf052a66477577b75dd737d1d11c944f9eb741ef3c4a"
 dependencies = [
- "bitfield-struct 0.9.3",
+ "bitfield-struct 0.9.5",
  "bitflags 2.8.0",
  "log",
  "mu_pi",
@@ -497,9 +497,9 @@ dependencies = [
 
 [[package]]
 name = "runtime_services"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5af8c0ac543c7000255daab2d6bdb33a15d00122e7f5e9234959db7dd823552"
+checksum = "37e242edf793418aefdc1618c56393265a352e0aa19606183135ea3ab2053e2a"
 dependencies = [
  "fallible-streaming-iterator",
  "r-efi",
@@ -550,9 +550,9 @@ dependencies = [
 
 [[package]]
 name = "section_extractor"
-version = "9.0.2"
+version = "9.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "73db9060e3d03a44dc9c2dbc0f2c437666e4f2b27988a334eaf9f9c6f2a8a597"
+checksum = "c45f0bcf0f2e63384f254834b7fcc4c067dcaa87a2c8b991650a11675a36de81"
 dependencies = [
  "alloc-no-stdlib",
  "brotli-decompressor",
@@ -616,9 +616,9 @@ checksum = "2b9e2fdb3a1e862c0661768b7ed25390811df1947a8acbfbefe09b47078d93c4"
 
 [[package]]
 name = "tpl_mutex"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "20afea071e421344db4edfb5c416ae11178d5a3c2a8a9bb8d59fb79eaa5c0c9b"
+checksum = "13916db40ca23e381a6735f6d9c3b9265a56037d4bc412c58e694ed019a871b7"
 dependencies = [
  "boot_services",
  "r-efi",
@@ -667,9 +667,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_cpu"
-version = "9.0.2"
+version = "9.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2bb96d59c004ff6c0ada5c6514a7144027a3818ab11279c8e57010051cae8a60"
+checksum = "4ee953087ee4e01ea4a9568bbc0d193416f91898c0a0b158899c2455f964e126"
 dependencies = [
  "arm-gic",
  "cfg-if",
@@ -686,10 +686,11 @@ dependencies = [
 
 [[package]]
 name = "uefi_debugger"
-version = "9.0.2"
+version = "9.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74194cabfb00639808538003146022186e15e4da980d915d81a63d8154206a88"
+checksum = "32a137b0b209372c34dfefb6581fd5528f4234d0a4b09dee576cc9c735a65f96"
 dependencies = [
+ "bitfield-struct 0.9.5",
  "cfg-if",
  "gdbstub",
  "log",
@@ -736,18 +737,18 @@ dependencies = [
 
 [[package]]
 name = "uefi_protocol"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e361be9dd385a8cc4b7e470bfc568f18862d3b32ed2c89478d092a75ab59e55e"
+checksum = "ee3c1bf73024fdf6dad938a151866291cbdf66ed88d20dd939a42baf2b6eb526"
 dependencies = [
  "r-efi",
 ]
 
 [[package]]
 name = "uefi_sdk"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1ff00485a3a94d0a6a0f22750cc5c15697581dff09287279763df5f75c1aba91"
+checksum = "ca050640254ec2c59e96523c4b775bb3ee24a7b2e6879bf8b5ea92739dfea5b6"
 dependencies = [
  "boot_services",
  "fixedbitset",
@@ -763,9 +764,9 @@ dependencies = [
 
 [[package]]
 name = "unicode-ident"
-version = "1.0.15"
+version = "1.0.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11cd88e12b17c6494200a9c1b683a04fcac9573ed74cd1b62aeb2727c5592243"
+checksum = "a210d160f08b701c8721ba1c726c11662f877ea6b7094007e1ca9a1041945034"
 
 [[package]]
 name = "uuid"

@@ -38,11 +38,16 @@ static LOGGER: AdvancedLogger<UartPl011> = AdvancedLogger::new(
     UartPl011::new(0x6000_0000),
 );
 
+static DEBUGGER: uefi_debugger::UefiDebugger<UartPl011> =
+    uefi_debugger::UefiDebugger::new(UartPl011::new(0x6000_0000)).with_default_config(false, true, 0);
+
 #[cfg_attr(target_os = "uefi", export_name = "efi_main")]
 pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
     log::set_logger(&LOGGER).map(|()| log::set_max_level(log::LevelFilter::Trace)).unwrap();
     let adv_logger_component = AdvancedLoggerComponent::<UartPl011>::new(&LOGGER);
     adv_logger_component.init_advanced_logger(physical_hob_list).unwrap();
+
+    uefi_debugger::set_debugger(&DEBUGGER);
 
     Core::default()
         .with_cpu_init(uefi_cpu::cpu::aarch64::EfiCpuInitAArch64::default())
