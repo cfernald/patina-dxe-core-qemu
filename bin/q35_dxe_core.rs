@@ -10,13 +10,10 @@
 #![no_std]
 #![no_main]
 
-extern crate alloc;
-
 use adv_logger::{component::AdvancedLoggerComponent, logger::AdvancedLogger};
-use alloc::boxed::Box;
 use core::{ffi::c_void, panic::PanicInfo};
 use dxe_core::Core;
-use sample_components::HelloComponent;
+use sample_components as sc;
 use uefi_sdk::{log::Format, serial::Uart16550};
 
 #[panic_handler]
@@ -61,15 +58,13 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
         .with_interrupt_manager(uefi_cpu::interrupts::InterruptManagerX64::default())
         .with_interrupt_bases(uefi_cpu::interrupts::InterruptBasesNull::default())
         .with_section_extractor(section_extractor::CompositeSectionExtractor::default())
-        // Add any config knob functions for pre-gcd-init Core
-        // .with_some_config(true)
-        .initialize(physical_hob_list) // We can make allocations now!
-        // Add any config knob functions for post-gcd-init Core
-        // .with_some_config(true)
-        .with_driver(Box::new(adv_logger_component))
-        .with_driver(Box::new(HelloComponent::default()))
-        .with_driver(Box::new(HelloComponent::default().with_name("Dxe Core")))
-        .with_driver(Box::new(HelloComponent::default().with_name("World")))
+        .init_memory(physical_hob_list) // We can make allocations now!
+        .with_config(sc::Name("World")) // Config knob for sc::log_hello
+        .with_component(adv_logger_component)
+        .with_component(sc::log_hello) // Example of a function component
+        .with_component(sc::HelloStruct("World")) // Example of a struct component
+        .with_component(sc::GreetingsEnum::Hello("World")) // Example of a struct component (enum)
+        .with_component(sc::GreetingsEnum::Goodbye("World")) // Example of a struct component (enum)
         .start()
         .unwrap();
 
