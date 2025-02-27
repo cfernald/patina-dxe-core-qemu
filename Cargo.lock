@@ -468,6 +468,7 @@ dependencies = [
  "log",
  "sample_components",
  "section_extractor",
+ "stacktrace",
  "uefi_cpu",
  "uefi_debugger",
  "uefi_sdk 2.0.0",
@@ -597,6 +598,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5b9eb1a2f4c41445a3a0ff9abc5221c5fcd28e1f13cd7c0397706f9ac938ddb0"
 dependencies = [
  "lock_api",
+]
+
+[[package]]
+name = "stacktrace"
+version = "9.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0fc0fd5766039fc6b4d7dbb78c82803df817a22d5eaf87496d573d466985dad7"
+dependencies = [
+ "cfg-if",
+ "log",
 ]
 
 [[package]]

@@ -21,6 +21,7 @@ log = { version = "^0.4", default-features = false, features = [
 ] }
 sample_components = { version = "8" }
 section_extractor = { version = "9" }
+stacktrace = { version = "9" }
 uefi_cpu = { version = "9" }
 uefi_debugger = { version = "9" }
 uefi_sdk = { version = "2" }

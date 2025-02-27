@@ -11,6 +11,7 @@
 #![no_main]
 
 use adv_logger::{component::AdvancedLoggerComponent, logger::AdvancedLogger};
+use stacktrace::StackTrace;
 use core::{ffi::c_void, panic::PanicInfo};
 use dxe_core::Core;
 use sample_components as sc;
@@ -19,6 +20,11 @@ use uefi_sdk::{log::Format, serial::UartPl011};
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     log::error!("{}", info);
+
+    if let Err(err) = unsafe { StackTrace::dump() } {
+        log::error!("StackTrace: {}", err);
+    }
+
     loop {}
 }
 
