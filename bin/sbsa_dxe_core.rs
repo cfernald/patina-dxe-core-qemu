@@ -25,6 +25,10 @@ fn panic(info: &PanicInfo) -> ! {
         log::error!("StackTrace: {}", err);
     }
 
+    if uefi_debugger::enabled() {
+        uefi_debugger::breakpoint();
+    }
+
     loop {}
 }
 
