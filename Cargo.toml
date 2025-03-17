@@ -1,6 +1,6 @@
 [package]
 name = "qemu_dxe_core"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 
 [[bin]]
@@ -14,16 +14,16 @@ path = "bin/sbsa_dxe_core.rs"
 required-features = ["aarch64"]
 
 [dependencies]
-adv_logger = { version = "8" }
-dxe_core = { version = "8" }
+adv_logger = { version = "9" }
+dxe_core = { version = "9" }
 log = { version = "^0.4", default-features = false, features = [
     "release_max_level_warn",
 ] }
-sample_components = { version = "8" }
-section_extractor = { version = "9" }
-stacktrace = { version = "9" }
-uefi_cpu = { version = "9" }
-uefi_debugger = { version = "9" }
+sample_components = { version = "9" }
+section_extractor = { version = "10" }
+stacktrace = { version = "10" }
+uefi_cpu = { version = "10" }
+uefi_debugger = { version = "10" }
 uefi_sdk = { version = "2" }
 
 [profile.dev]
