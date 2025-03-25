@@ -24,7 +24,7 @@ section_extractor = { version = "10" }
 stacktrace = { version = "10" }
 uefi_cpu = { version = "10" }
 uefi_debugger = { version = "10" }
-uefi_sdk = { version = "2" }
+uefi_sdk = { version = "3" }
 
 [profile.dev]
 opt-level = 3

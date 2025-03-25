@@ -11,11 +11,11 @@
 #![no_main]
 
 use adv_logger::{component::AdvancedLoggerComponent, logger::AdvancedLogger};
-use stacktrace::StackTrace;
 use core::{ffi::c_void, panic::PanicInfo};
 use dxe_core::Core;
 use sample_components as sc;
-use uefi_sdk::{log::Format, serial::Uart16550};
+use stacktrace::StackTrace;
+use uefi_sdk::{log::Format, serial::uart::Uart16550};
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
@@ -42,11 +42,11 @@ static LOGGER: AdvancedLogger<Uart16550> = AdvancedLogger::new(
         ("efi_memory_map", log::LevelFilter::Off),
     ],
     log::LevelFilter::Trace,
-    Uart16550::new(uefi_sdk::serial::Interface::Io(0x402)),
+    Uart16550::Io { base: 0x402 },
 );
 
-static DEBUGGER: uefi_debugger::UefiDebugger<uefi_sdk::serial::Uart16550> =
-    uefi_debugger::UefiDebugger::new(uefi_sdk::serial::Uart16550::new(uefi_sdk::serial::Interface::Io(0x3F8)))
+static DEBUGGER: uefi_debugger::UefiDebugger<Uart16550> =
+    uefi_debugger::UefiDebugger::new(Uart16550::Io { base: 0x3F8 })
         .with_default_config(false, true, 0)
         .with_debugger_logging();
 
