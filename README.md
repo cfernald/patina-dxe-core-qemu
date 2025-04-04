@@ -89,7 +89,7 @@ To publish the NuGet package, follow the steps below:
 
 3. Build the Q35 and SBSA `debug` and `release` binaries.
 
-4. Navigate to the `NugetPublishing` directory of this repo.
+4. Navigate to the `.nuget` directory of this repo.
 
 5. Create a directory called `DXECORE.QEMU` structured as shown below with the binaries from your build. This is the
    content of the NuGet package.
