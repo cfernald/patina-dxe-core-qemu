@@ -112,9 +112,9 @@ dependencies = [
 
 [[package]]
 name = "boot_services"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a512627a6f5b3cdf7cadde7c239575c866963dbf50130b5a52f612e33fd5fed"
+checksum = "54963193a6b7226c5b2c2af7686438853a3a211c48544f65415c8c5d0bea8a70"
 dependencies = [
  "r-efi",
  "uefi_protocol",
@@ -169,9 +169,9 @@ dependencies = [
 
 [[package]]
 name = "driver_binding"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d01215c68afd038142d468a018b1def3ca379e512a4a465a9f9cdafd007a9571"
+checksum = "72c89828d6d6357411760857286b467a83532e29691c5e6ad401247a5303c41a"
 dependencies = [
  "boot_services",
  "log",
@@ -335,9 +335,9 @@ dependencies = [
 
 [[package]]
 name = "mu_pi"
-version = "5.2.1"
+version = "5.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fe66bd7367419dd27a7efc7372ea0891fc84f8042b9f948861897261472075b5"
+checksum = "7e842f7441b9946fcc0942bdddd404a171133a7df066ac84c18ba409bb285391"
 dependencies = [
  "indoc",
  "num-traits",
@@ -434,9 +434,9 @@ dependencies = [
 
 [[package]]
 name = "once_cell"
-version = "1.21.1"
+version = "1.21.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d75b0bedcc4fe52caa0e03d9f1151a323e4aa5e2d78ba3580400cd3c9e2bc4bc"
+checksum = "42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d"
 
 [[package]]
 name = "paging"
@@ -478,7 +478,7 @@ dependencies = [
 
 [[package]]
 name = "qemu_dxe_core"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = [
  "adv_logger",
  "dxe_core",
@@ -523,9 +523,9 @@ dependencies = [
 
 [[package]]
 name = "runtime_services"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f60c495ea4ded7a95099f8a2aa3221828aaa4ca5c3adcf0880509b0032aa0b6e"
+checksum = "3f91582789fb20a8eea898926870df29ab033c3510f79c3656bb7c7592135720"
 dependencies = [
  "fallible-streaming-iterator",
  "r-efi",
@@ -573,9 +573,9 @@ dependencies = [
 
 [[package]]
 name = "scroll_derive"
-version = "0.12.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f81c2fde025af7e69b1d1420531c8a8811ca898919db177141a85313b1cb932"
+checksum = "1783eabc414609e28a5ba76aee5ddd52199f7107a0b24c2e9746a1ecc34a683d"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -708,9 +708,9 @@ checksum = "2b9e2fdb3a1e862c0661768b7ed25390811df1947a8acbfbefe09b47078d93c4"
 
 [[package]]
 name = "tpl_mutex"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9830dff5050ff4704169a2530462ec1d5d8ff4b51b174ff09be99e1a2090abb0"
+checksum = "d6b4b47b90a9c5ff8c01b9b5a91a7deb212bab92b8d571697bdd88e94488b540"
 dependencies = [
  "boot_services",
  "r-efi",
@@ -821,18 +821,18 @@ dependencies = [
 
 [[package]]
 name = "uefi_protocol"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc5f682f79f2534e922732230b01719cc7ecfe3d5bc3803ec34d68a147292e29"
+checksum = "f244e945efd5d23c300e1e7a0b1247ece96c9a504a8a96bdb91d87e05bdfe167"
 dependencies = [
  "r-efi",
 ]
 
 [[package]]
 name = "uefi_sdk"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a6c2d9cc6fd6ba5a26a0de546fcb52e9660b481c376c7e2fdd695afcd89299ed"
+checksum = "5bd5d9c39e230bc546157eea09fa98ae6a1eb87508fb0183fcb2fa5fa576b004"
 dependencies = [
  "boot_services",
  "cfg-if",
@@ -851,9 +851,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_sdk_macro"
-version = "3.0.1"
+version = "3.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fdb1bb6a8170cf9292de3b63948f75405dc18f72814d833d2e5aff1c076332f7"
+checksum = "1c8ced5b9abbc65ab471fdcf62a52f2626c3e888a9d7273fcf76f492aa3e663b"
 dependencies = [
  "proc-macro2",
  "quote",
