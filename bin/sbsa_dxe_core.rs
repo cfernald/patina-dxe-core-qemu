@@ -56,6 +56,8 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
 
     uefi_debugger::set_debugger(&DEBUGGER);
 
+    log::info!("DXE Core Platform Binary v{}", env!("CARGO_PKG_VERSION"));
+
     Core::default()
         .with_cpu_init(uefi_cpu::cpu::aarch64::EfiCpuInitAArch64::default())
         .with_interrupt_manager(uefi_cpu::interrupts::InterruptManagerAArch64::new())
