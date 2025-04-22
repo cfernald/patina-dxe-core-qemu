@@ -26,6 +26,9 @@ uefi_cpu = { version = "10" }
 uefi_debugger = { version = "10" }
 uefi_sdk = { version = "3" }
 
+[profile.release]
+debug = true
+
 [profile.dev]
 opt-level = 3
 
