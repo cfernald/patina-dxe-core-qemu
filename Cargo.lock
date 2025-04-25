@@ -13,9 +13,9 @@ dependencies = [
 
 [[package]]
 name = "adv_logger"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b2c9597444983d4e3146d04e00ed94095f60d31141164eb10bbb766d6b87016"
+checksum = "756bb72c173a3d3311cb73567f76d3fa9cd962997a2b02556279c8a6943422e3"
 dependencies = [
  "log",
  "mu_pi",
@@ -112,9 +112,9 @@ dependencies = [
 
 [[package]]
 name = "boot_services"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54963193a6b7226c5b2c2af7686438853a3a211c48544f65415c8c5d0bea8a70"
+checksum = "fa64f7c511ece5d6482ec4090eb120677aaab7e938c100ea6c18ae0f3a05f805"
 dependencies = [
  "r-efi",
  "uefi_protocol",
@@ -169,9 +169,9 @@ dependencies = [
 
 [[package]]
 name = "driver_binding"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72c89828d6d6357411760857286b467a83532e29691c5e6ad401247a5303c41a"
+checksum = "27c5c602d6d86912e5e141850d7735d14188414af2788556090f393b94b31557"
 dependencies = [
  "boot_services",
  "log",
@@ -181,9 +181,9 @@ dependencies = [
 
 [[package]]
 name = "dxe_core"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "391a2558b6c0e94738bc85a53b176906d4ec1a244d810284164240ca1da103d5"
+checksum = "7da658e8a6071394e3e1cfe7cee4dd2052d101a6d860bdb45e30bc7b57312a0f"
 dependencies = [
  "arm-gic",
  "compile-time",
@@ -347,32 +347,20 @@ dependencies = [
 
 [[package]]
 name = "mu_rust_helpers"
-version = "2.0.0"
+version = "3.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f00f6c082db4b8113d7319f3174813cc3ed1bd0803f31d53b455aa85e5b4653"
+checksum = "eed038d2dc3a2d5f06774d526d677e4fb9ff054491c2d3a9fe27fe69804a361b"
 dependencies = [
- "mu_uefi_boot_services",
  "mu_uefi_decompress",
  "mu_uefi_guid",
  "mu_uefi_perf_timer",
- "mu_uefi_runtime_services",
- "mu_uefi_tpl_mutex",
-]
-
-[[package]]
-name = "mu_uefi_boot_services"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f54a204278942225fa925fb8c416370c94ae83f9100048a7acc2acc5100abcf7"
-dependencies = [
- "r-efi",
 ]
 
 [[package]]
 name = "mu_uefi_decompress"
-version = "2.0.0"
+version = "3.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b328d77ce47a69115d9fd301189c9539338905e0ba8d3587b723d7ee5ab5c4c4"
+checksum = "ec6cd0d1d100d366e10f054039fdcf81002142d0561ed4eff7ed59bea370649c"
 dependencies = [
  "bitvec",
  "log",
@@ -380,9 +368,9 @@ dependencies = [
 
 [[package]]
 name = "mu_uefi_guid"
-version = "2.0.0"
+version = "3.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce3b2bdebe17fefd98931d699fb6f3127e8c72ffff56a43b276913cab55adcef"
+checksum = "65a4eecc186789a3686767e1653f220b947b0e552db1d8d1625c4b1e62711a9f"
 dependencies = [
  "r-efi",
  "uuid",
@@ -390,31 +378,12 @@ dependencies = [
 
 [[package]]
 name = "mu_uefi_perf_timer"
-version = "2.0.0"
+version = "3.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b80967534abac41341f05b99ab7ba78ac16f1a9fd67512ef2916e6fb3b8bc601"
+checksum = "6011d836af33966e1ed8fc93e892dc722a733fa8537525cdee73a56ded76f0fa"
 dependencies = [
  "aarch64-cpu",
-]
-
-[[package]]
-name = "mu_uefi_runtime_services"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7fc9e088452a27782df5a72caf2b15e9c54ce9b8c1553c41447c54f5a9dcdb4d"
-dependencies = [
- "fallible-streaming-iterator",
- "r-efi",
-]
-
-[[package]]
-name = "mu_uefi_tpl_mutex"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26163b5d3a24f28f96c49e0f6053c39ccd202db60af401beaf10cfb876f63905"
-dependencies = [
- "mu_uefi_boot_services",
- "r-efi",
+ "log",
 ]
 
 [[package]]
@@ -486,7 +455,6 @@ dependencies = [
  "sample_components",
  "section_extractor",
  "stacktrace",
- "uefi_cpu",
  "uefi_debugger",
  "uefi_sdk",
 ]
@@ -523,9 +491,9 @@ dependencies = [
 
 [[package]]
 name = "runtime_services"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f91582789fb20a8eea898926870df29ab033c3510f79c3656bb7c7592135720"
+checksum = "762d4d38ba2bc5404bf8fa6d5e6b73ea3a208cfccddc6f55ca0a1360a6943be5"
 dependencies = [
  "fallible-streaming-iterator",
  "r-efi",
@@ -548,9 +516,9 @@ checksum = "eded382c5f5f786b989652c49544c4877d9f015cc22e145a5ea8ea66c2921cd2"
 
 [[package]]
 name = "sample_components"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05e1d5a1bc9dfa44fe6d05075beddb05a7fc9dad15d66a9b3e57206749175533"
+checksum = "5a012faef82344b158f98f5f26b3ee190d493d448218fc47dd8eff57165197b4"
 dependencies = [
  "log",
  "uefi_sdk",
@@ -584,9 +552,9 @@ dependencies = [
 
 [[package]]
 name = "section_extractor"
-version = "10.0.3"
+version = "13.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "715dc69845db11d544e4b827cbf495a6b43a7314c7f49655b4d20ee61e81225b"
+checksum = "cbbb53b744125efa766b97b909e4adac6bcd004fedf470910750695693040140"
 dependencies = [
  "alloc-no-stdlib",
  "brotli-decompressor",
@@ -644,9 +612,9 @@ dependencies = [
 
 [[package]]
 name = "stacktrace"
-version = "10.0.3"
+version = "13.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3e3b824d766c8f80dc9005917d9da51478ef14dccf2d735345976ab493555d8"
+checksum = "9a40fd2e03adac223b345713601f20233888410d00862a04db411c25e472aa82"
 dependencies = [
  "cfg-if",
  "log",
@@ -708,9 +676,9 @@ checksum = "2b9e2fdb3a1e862c0661768b7ed25390811df1947a8acbfbefe09b47078d93c4"
 
 [[package]]
 name = "tpl_mutex"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d6b4b47b90a9c5ff8c01b9b5a91a7deb212bab92b8d571697bdd88e94488b540"
+checksum = "1585419f7da86cf65068adeb797165aa00183af486453444c552f386cbb81965"
 dependencies = [
  "boot_services",
  "r-efi",
@@ -729,9 +697,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_collections"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b94e74955ae200eef01f34f882b2da52615a168ae9c7430bcf62b655638c1105"
+checksum = "4aed2878c275dc533d7381afbb26eddaeedeb21ac9e36689efed37890e17c88b"
 dependencies = [
  "log",
 ]
@@ -749,9 +717,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_cpu"
-version = "10.0.3"
+version = "13.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b38f9facb622c7af73beb5a435da61204010975d62805a5ae3c1e8fd4374a6d6"
+checksum = "8b8f50dd24b7aaa0df4d20885f6b47c99b92c4a15df4bcc4176c125b49c37145"
 dependencies = [
  "arm-gic",
  "cfg-if",
@@ -769,9 +737,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_debugger"
-version = "10.0.3"
+version = "13.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a32b8925639d3c8c733411180672d7cc36bdb41db7ef6734e0065ad3aad3d6e"
+checksum = "96e1ccbbe8348e0e7dc5cc0f5af2011d291553155f63cb1d4273812b1be2add5"
 dependencies = [
  "bitfield-struct 0.9.5",
  "cfg-if",
@@ -785,9 +753,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_depex"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7e9dd6cf3b0ac4ad21d086614cb96c4e43b08443a7ab0657fab1793300fadf8"
+checksum = "eab5e3a7ad42c0b7853259fe5ca1e1d46f2f3c8c9f0e321622381bcf508f45c5"
 dependencies = [
  "log",
  "r-efi",
@@ -796,18 +764,18 @@ dependencies = [
 
 [[package]]
 name = "uefi_device_path"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16677fd673db37ff2cf33764c79a04837c2030457be557a2cdaee9995d35cfbb"
+checksum = "270a6d957036e6d74611e4671cbb99eb8de8afd8e1bf22478fc51888b6a7cb79"
 dependencies = [
  "r-efi",
 ]
 
 [[package]]
 name = "uefi_performance"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6931db170f137d66bd4febfc9296c0e220f4e5ceffd32a08fbe58ef6c416367"
+checksum = "281d035bb66206e9b2cafeb1826c1372167651cc557a47ea0cefbc0a23474cfe"
 dependencies = [
  "log",
  "mu_pi",
@@ -821,18 +789,18 @@ dependencies = [
 
 [[package]]
 name = "uefi_protocol"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f244e945efd5d23c300e1e7a0b1247ece96c9a504a8a96bdb91d87e05bdfe167"
+checksum = "0475c90f13237a9f8f1d2fe5425d46473c4c573adfadffaef8a1bb3489ea7274"
 dependencies = [
  "r-efi",
 ]
 
 [[package]]
 name = "uefi_sdk"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5bd5d9c39e230bc546157eea09fa98ae6a1eb87508fb0183fcb2fa5fa576b004"
+checksum = "b43a293fa3d361cf680231c9418413d1f389c2cfa7c3a4173e7ca7692be843d2"
 dependencies = [
  "boot_services",
  "cfg-if",
@@ -851,9 +819,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_sdk_macro"
-version = "3.0.3"
+version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c8ced5b9abbc65ab471fdcf62a52f2626c3e888a9d7273fcf76f492aa3e663b"
+checksum = "3d49c7dea9919dc4069e97e884f5f35230248c1f50e1c28f15b2edecd4e58328"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -863,9 +831,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_test"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8b789f9c0d2b0c2aec8d4f14fb2db4aa04ee6bb680d5b6d57088ab127e9a0b51"
+checksum = "2807676ca0e56e2f772c1dddbe847b2d9cbddcc061e05ae033a3e1c8d2bfec76"
 dependencies = [
  "linkme",
  "log",
@@ -875,9 +843,9 @@ dependencies = [
 
 [[package]]
 name = "uefi_test_macro"
-version = "9.1.1"
+version = "11.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cdc46fd261768c7da81e1b82b3668133be2ca3181cd4b0c88469fdde82794fa7"
+checksum = "06978c60c10edefb6285693a005eee950f17e14d06602a8f8ca0179d207fb61e"
 dependencies = [
  "proc-macro2",
  "quote",

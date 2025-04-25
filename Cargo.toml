@@ -14,17 +14,16 @@ path = "bin/sbsa_dxe_core.rs"
 required-features = ["aarch64"]
 
 [dependencies]
-adv_logger = { version = "9" }
-dxe_core = { version = "9" }
+adv_logger = { version = "11" }
+dxe_core = { version = "11" }
 log = { version = "^0.4", default-features = false, features = [
     "release_max_level_warn",
 ] }
-sample_components = { version = "9" }
-section_extractor = { version = "10" }
-stacktrace = { version = "10" }
-uefi_cpu = { version = "10" }
-uefi_debugger = { version = "10" }
-uefi_sdk = { version = "3" }
+sample_components = { version = "11" }
+section_extractor = { version = "13" }
+stacktrace = { version = "13" }
+uefi_debugger = { version = "13" }
+uefi_sdk = { version = "5" }
 
 [profile.release]
 debug = true

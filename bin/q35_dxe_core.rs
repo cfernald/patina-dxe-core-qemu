@@ -61,9 +61,6 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
     log::info!("DXE Core Platform Binary v{}", env!("CARGO_PKG_VERSION"));
 
     Core::default()
-        .with_cpu_init(uefi_cpu::cpu::EfiCpuInitX64::default())
-        .with_interrupt_manager(uefi_cpu::interrupts::InterruptManagerX64::default())
-        .with_interrupt_bases(uefi_cpu::interrupts::InterruptBasesNull::default())
         .with_section_extractor(section_extractor::CompositeSectionExtractor::default())
         .init_memory(physical_hob_list) // We can make allocations now!
         .with_config(sc::Name("World")) // Config knob for sc::log_hello
