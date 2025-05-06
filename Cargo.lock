@@ -443,11 +443,13 @@ dependencies = [
  "adv_logger",
  "dxe_core",
  "log",
+ "r-efi",
  "sample_components",
  "section_extractor",
  "stacktrace",
  "uefi_debugger",
  "uefi_sdk",
+ "x86_64",
 ]
 
 [[package]]

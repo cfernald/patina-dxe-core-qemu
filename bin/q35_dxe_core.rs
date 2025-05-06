@@ -13,9 +13,14 @@
 use adv_logger::{component::AdvancedLoggerComponent, logger::AdvancedLogger};
 use core::{ffi::c_void, panic::PanicInfo};
 use dxe_core::Core;
+use qemu_resources::q35::component::service as q35_services;
 use sample_components as sc;
 use stacktrace::StackTrace;
+use uefi_sdk::component::config as uefi_sdk_configs;
+use uefi_sdk::component::service as uefi_sdk_services;
 use uefi_sdk::{log::Format, serial::uart::Uart16550};
+extern crate alloc;
+use alloc::vec;
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
@@ -69,6 +74,17 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
         .with_component(sc::HelloStruct("World")) // Example of a struct component
         .with_component(sc::GreetingsEnum::Hello("World")) // Example of a struct component (enum)
         .with_component(sc::GreetingsEnum::Goodbye("World")) // Example of a struct component (enum)
+        .with_config(uefi_sdk_configs::mm::MmCommunicationConfiguration {
+            acpi_base: uefi_sdk_configs::mm::AcpiBase::Mmio(0x0), // Actual ACPI base address will be set during boot
+            cmd_port: uefi_sdk_configs::mm::MmiPort::Smi(0xB2),
+            data_port: uefi_sdk_configs::mm::MmiPort::Smi(0xB3),
+            comm_buffers: vec![],
+        })
+        .with_component(q35_services::mm_config_provider::MmConfigurationProvider)
+        .with_component(q35_services::mm_control::QemuQ35PlatformMmControl::new())
+        .with_component(uefi_sdk_services::sw_mmi_manager::SwMmiManager::new())
+        .with_component(uefi_sdk_services::mm_communicator::MmCommunicator::new())
+        .with_component(q35_services::mm_test::QemuQ35MmTest::new())
         .start()
         .unwrap();
 
