@@ -12,7 +12,7 @@
 
 use adv_logger::{component::AdvancedLoggerComponent, logger::AdvancedLogger};
 use core::{ffi::c_void, panic::PanicInfo};
-use dxe_core::Core;
+use dxe_core::{Core, GicBases};
 use sample_components as sc;
 use stacktrace::StackTrace;
 use uefi_sdk::{log::Format, serial::uart::UartPl011};
@@ -60,8 +60,8 @@ pub extern "efiapi" fn _start(physical_hob_list: *const c_void) -> ! {
 
     Core::default()
         .with_section_extractor(section_extractor::CompositeSectionExtractor::default())
-        .with_interrupt_bases(0x40060000, 0x40080000)
         .init_memory(physical_hob_list) // We can make allocations now!
+        .with_config(GicBases::new(0x40060000, 0x40080000)) // GIC bases for AArch64
         .with_config(sc::Name("World")) // Config knob for sc::log_hello
         .with_component(adv_logger_component)
         .with_component(sc::log_hello) // Example of a function component

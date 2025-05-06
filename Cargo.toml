@@ -14,12 +14,12 @@ path = "bin/sbsa_dxe_core.rs"
 required-features = ["aarch64"]
 
 [dependencies]
-adv_logger = { version = "12" }
-dxe_core = { version = "12" }
+adv_logger = {version = "13" }
+dxe_core = { version = "13" }
 log = { version = "^0.4", default-features = false, features = [
     "release_max_level_warn",
 ] }
-sample_components = { version = "12" }
+sample_components = { version = "13" }
 section_extractor = { version = "14" }
 stacktrace = { version = "14" }
 uefi_debugger = { version = "14" }
