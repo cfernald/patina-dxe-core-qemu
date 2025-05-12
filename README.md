@@ -67,7 +67,7 @@ dxe_core = { path = "../uefi-dxe-core/dxe_core" }
 
 ## NuGet Publishing Instructions
 
-The NuGet package is currently published to [DxeRust](https://dev.azure.com/microsoft/MsUEFI/_artifacts/feed/DxeRust)
-feed where it is consumed in the [UefiRust](https://dev.azure.com/microsoft/MsUEFI/_git/UefiRust) repository.
+The NuGet package is currently published to the public [Patina QEMU DXE Core](https://dev.azure.com/patina-fw/artifacts/_artifacts/feed/qemu-dxe-core)
+feed where it is consumed in the [Patina QEMU](https://github.com/OpenDevicePartnership/patina-qemu) repository.
 
-The NuGet is built and published using the [Publish Rust DXE Core pipeline](https://dev.azure.com/microsoft/MsUEFI/_build?definitionId=131978&_a=summary).
+The NuGet is built and published using a GitHub workflow in [Patina QEMU DXE Core Actions](https://github.com/OpenDevicePartnership/patina-dxe-core-qemu/actions).
