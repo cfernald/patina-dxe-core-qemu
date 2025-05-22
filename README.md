@@ -2,28 +2,43 @@
 
 ## Overview
 
-The main purpose of this repository is to integrate the Rust components and dependencies necessary to build a Rust
-DXE Core binary that will be used in QEMU firmware.
+The main purpose of this repository is to integrate the Rust components and dependencies necessary to build a sample
+Rust DXE Core binary that can be used in a QEMU UEFI firmware build.
 
-Currently, two QEMU platforms are supported. The build commands for each are given below.
+Currently, two QEMU platforms are supported, Q35 for x64 architecture and SBSA for aarch64 architecture.
 
-Set the `RUSTC_BOOTSTRAP` environment variable to `1` in the terminal used for the build.
+To build an executable, this repo uses the same compiler setup steps that are used in the patina project
+[readme.md file build section](https://github.com/OpenDevicePartnership/patina#Build).  Once the compiler is installed,
+executing cargo make will create a DXE core .EFI file that is a replacement for the dxe core driver in the
+[patina-qemu](https://github.com/OpenDevicePartnership/patina-qemu) UEFI build.
 
-- Linux: `export RUSTC_BOOTSTRAP=1`
-- Windows (cmd): `set RUSTC_BOOTSTRAP=1`
-- Windows (powershell): `$env:RUSTC_BOOTSTRAP=1`
+- Q35 (x64) debug
 
----
+   ```shell
+   Compile Command:  'cargo make q35'
+   Output File:      'target/x86_64-unknown-uefi/debug/qemu_q35_dxe_core.efi'
+   ```
 
-- **QEMU Q35**: `cargo make q35`
-  - Release build: `cargo make q35-release`
-- **QEMU SBSA**: `cargo make sbsa`
-  - Release build: `cargo make sbsa-release`
+- Q35 (x64) release
 
-The binaries are produced in the `target` directory.
+   ```shell
+   Compile Command:  'cargo make q35-release'
+   Output File:      'target/x86_64-unknown-uefi/release/qemu_q35_dxe_core.efi'
+   ```
 
-- **QEMU Q35**: `target/x86_64-unknown-uefi`
-- **QEMU SBSA**: `target/aarch64-unknown-uefi`
+- SBSA (aarch64) debug
+
+   ```shell
+   Compile Command:  'cargo make sbsa'
+   Output File:      'target/aarch64-unknown-uefi/debug/qemu_sbsa_dxe_core.efi'
+   ```
+
+- SBSA (aarch64) release
+
+   ```shell
+   Compile Command:  'cargo make sbsa-release'
+   Output File:      'target/aarch64-unknown-uefi/release/qemu_sbsa_dxe_core.efi'
+   ```
 
 ## Working with Local Dependencies
 
