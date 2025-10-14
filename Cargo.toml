@@ -47,7 +47,7 @@ strip = "symbols"
 incremental = true
 
 [profile.dev]
-opt-level = 3
+opt-level = "s"
 
 [profile.test]
 opt-level = 0
